@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "426435038614",
+    "project_id": "tassianaflutter",
+    "storage_bucket": "tassianaflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426435038614:android:653daded091782506661b7",
+        "android_client_info": {
+          "package_name": "com.example.sneakers_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXut-txohRxBVbldDFfjBHCY7y3UrFJ1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

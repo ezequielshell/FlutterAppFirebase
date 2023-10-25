@@ -20,6 +20,8 @@ dependencies:
   custom_navigation_bar: ^0.8.2
   simple_animations: ^4.0.1
   supercharged: ^2.1.1
+  firebase_core: ^2.17.0
+  cloud_firestore: ^4.9.3
 
 dev_dependencies:
   flutter_test:

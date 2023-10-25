@@ -29,53 +29,55 @@ class details extends State<DetailsBody> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    return Container(
-      width: width,
-      height: height * 1.1,
-      child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            topInformationWidget(width, height),
-            middleImgListWidget(width, height),
-            SizedBox(
-              height: 20,
-              width: width / 1.1,
-              child: Divider(
-                thickness: 1.4,
-                color: Colors.grey,
+    return SingleChildScrollView(
+      child: Container(
+        width: width,
+        height: height * 1.1,
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              topInformationWidget(width, height),
+              middleImgListWidget(width, height),
+              SizedBox(
+                height: 20,
+                width: width / 1.1,
+                child: Divider(
+                  thickness: 1.4,
+                  color: Colors.grey,
+                ),
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Column(
-                children: [
-                  nameAndPrice(),
-                  SizedBox(height: 10),
-                  shoeInfo(width, height),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  moreDetailsText(width, height),
-                  sizeTextAndCountry(width, height),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  endSizesAndButton(width, height),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  materialButton(width, height),
-                  SizedBox(
-                    height: 20,
-                  ),
-                ],
+              SizedBox(
+                height: 10,
               ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Column(
+                  children: [
+                    nameAndPrice(),
+                    SizedBox(height: 10),
+                    shoeInfo(width, height),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    moreDetailsText(width, height),
+                    sizeTextAndCountry(width, height),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    endSizesAndButton(width, height),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    materialButton(width, height),
+                    SizedBox(
+                      height: 20,
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -83,47 +85,49 @@ class details extends State<DetailsBody> {
 
   // Top information Widget Components
   topInformationWidget(width, height) {
-    return Container(
-      width: width,
-      height: height / 2.3,
-      child: Stack(
-        children: [
-          Positioned(
-            left: 50,
-            bottom: 20,
-            child: FadeAnimation(
-              delay: 0.5,
-              child: Container(
-                width: 1000,
-                height: height / 2.2,
-                decoration: BoxDecoration(
-                  color: widget.model.modelColor,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(1500),
-                    bottomRight: Radius.circular(100),
+    return SingleChildScrollView(
+      child: Container(
+        width: width,
+        height: height / 2.3,
+        child: Stack(
+          children: [
+            Positioned(
+              left: 50,
+              bottom: 20,
+              child: FadeAnimation(
+                delay: 0.5,
+                child: Container(
+                  width: 1000,
+                  height: height / 2.2,
+                  decoration: BoxDecoration(
+                    color: widget.model.modelColor,
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(1500),
+                      bottomRight: Radius.circular(100),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            top: 100,
-            left: 30,
-            child: Hero(
-              tag: widget.isComeFromMoreSection
-                  ? widget.model.model
-                  : widget.model.imgAddress,
-              child: RotationTransition(
-                turns: AlwaysStoppedAnimation(-25 / 360),
-                child: Container(
-                  width: width / 1.3,
-                  height: height / 4.3,
-                  child: Image(image: AssetImage(widget.model.imgAddress)),
+            Positioned(
+              top: 100,
+              left: 30,
+              child: Hero(
+                tag: widget.isComeFromMoreSection
+                    ? widget.model.model
+                    : widget.model.imgAddress,
+                child: RotationTransition(
+                  turns: AlwaysStoppedAnimation(-25 / 360),
+                  child: Container(
+                    width: width / 1.3,
+                    height: height / 4.3,
+                    child: Image(image: AssetImage(widget.model.imgAddress)),
+                  ),
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

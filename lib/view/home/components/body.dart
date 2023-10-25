@@ -25,15 +25,17 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    return Column(
-      children: [
-        topCategoriesWidget(width, height),
-        SizedBox(height: 10),
-        middleCategoriesWidget(width, height),
-        SizedBox(height: 5),
-        moreTextWidget(),
-        lastCategoriesWidget(width, height),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          topCategoriesWidget(width, height),
+          SizedBox(height: 10),
+          middleCategoriesWidget(width, height),
+          SizedBox(height: 5),
+          moreTextWidget(),
+          lastCategoriesWidget(width, height),
+        ],
+      ),
     );
   }
 

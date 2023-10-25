@@ -22,23 +22,25 @@ class _BodyProfileState extends State<BodyProfile> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 8, vertical: 7),
-      width: width,
-      height: height,
-      child: Column(
-        children: [
-          topProfilePicAndName(width, height),
-          SizedBox(
-            height: 40,
-          ),
-          middleStatusListView(width, height),
-          SizedBox(
-            height: 30,
-          ),
-          middleDashboard(width, height),
-          bottomSection(width, height),
-        ],
+    return SingleChildScrollView(
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 8, vertical: 7),
+        width: width,
+        height: height,
+        child: Column(
+          children: [
+            topProfilePicAndName(width, height),
+            SizedBox(
+              height: 40,
+            ),
+            middleStatusListView(width, height),
+            SizedBox(
+              height: 30,
+            ),
+            middleDashboard(width, height),
+            bottomSection(width, height),
+          ],
+        ),
       ),
     );
   }
@@ -61,10 +63,7 @@ class _BodyProfileState extends State<BodyProfile> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Amir.H Bayat",
-                style: AppThemes.profileDevName
-              ),
+              Text("Amir.H Bayat", style: AppThemes.profileDevName),
               Text(
                 "Flutter Developer",
                 style: TextStyle(
@@ -312,7 +311,7 @@ class _BodyProfileState extends State<BodyProfile> {
                   fontSize: 17),
             ),
             SizedBox(
-              height: 40,
+              height: 20,
             ),
             Text(
               "    Log Out",
